@@ -175,9 +175,9 @@
 			_bindEventListeners: function(){
 				var $elem = $( this )
 					.bind( "click", function( e ){
-						var targ = $( e.target ).closest( "a[href='#next'],a[href='#prev']" );
+						var targ = $( e.target );
 						if( targ.length ){
-							$elem[ pluginName ]( targ.is( "[href='#next']" ) ? "next" : "prev" );
+							$elem[ pluginName ]( targ.is( "[href*='#next']" ) ? "next" : "prev" );
 							e.preventDefault();
 						}
 					});
