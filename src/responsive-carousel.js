@@ -175,7 +175,7 @@
 			_bindEventListeners: function(){
 				var $elem = $( this )
 					.bind( "click", function( e ){
-						var targ = $( e.target );
+						var targ = $( e.target ).closest('a');
 						if( targ.length ){
 							$elem[ pluginName ]( targ.is( "[href*='#next']" ) ? "next" : "prev" );
 							e.preventDefault();
